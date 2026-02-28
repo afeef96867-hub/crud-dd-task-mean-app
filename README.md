@@ -1,27 +1,29 @@
-In this DevOps task, you need to build and deploy a full-stack CRUD application using the MEAN stack (MongoDB, Express, Angular 15, and Node.js). The backend will be developed with Node.js and Express to provide REST APIs, connecting to a MongoDB database. The frontend will be an Angular application utilizing HTTPClient for communication.  
+# MEAN Stack Application – Dockerized & CI/CD Enabled
 
-The application will manage a collection of tutorials, where each tutorial includes an ID, title, description, and published status. Users will be able to create, retrieve, update, and delete tutorials. Additionally, a search box will allow users to find tutorials by title.
+## 📌 Overview
+This project is a full-stack MEAN (MongoDB, Express, Angular, Node.js) CRUD application.
+The application is containerized using Docker and deployed using Docker Compose.
+CI/CD is implemented using GitHub Actions.
 
-## Project setup
+---
 
-### Node.js Server
+## 🏗️ Architecture
+- Frontend: Angular served via Nginx (Port 80)
+- Backend: Node.js + Express (Port 8080)
+- Database: MongoDB 6
+- CI/CD: GitHub Actions
+- Container Orchestration: Docker Compose
 
-cd backend
+---
 
-npm install
+## 🚀 Application Access
+- Frontend: http://<VM-IP>
+- Backend API: http://<VM-IP>:8080/api/tutorials
 
-You can update the MongoDB credentials by modifying the `db.config.js` file located in `app/config/`.
+---
 
-Run `node server.js`
+## 🐳 Docker Setup
 
-### Angular Client
-
-cd frontend
-
-npm install
-
-Run `ng serve --port 8081`
-
-You can modify the `src/app/services/tutorial.service.ts` file to adjust how the frontend interacts with the backend.
-
-Navigate to `http://localhost:8081/`
+### Build & Run
+```bash
+docker compose up -d
