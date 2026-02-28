@@ -3,6 +3,9 @@ const express = require("express");
 
 const app = express();
 
+const mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+
 // parse requests of content-type - application/json
 app.use(express.json());
 
